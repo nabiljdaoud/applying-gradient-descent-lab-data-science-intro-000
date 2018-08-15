@@ -301,7 +301,7 @@ plot([revenues_per_budgets_trace, consultant_estimated_revenues_trace], revenues
 
 Overall, the model doesn't look too bad.  However, we can calculate the RSS to quantify how accurate his model really is.
 
-Let's write a method called `error_for_consultant_model` which takes in a budget of a movie in our dataset, and returns the difference between the movie's gross domestic revenue in 2013 dollars, and the prediction from the consultant's model.
+Let's write a method called `error_for_consultant_model` which takes in a movie in our dataset, and returns the difference between the movie's gross domestic revenue in 2013 dollars, and the prediction from the consultant's model.
 
 
 ```python
@@ -542,7 +542,7 @@ $$ \frac{dJ}{dm}J(m,b) = -2\sum_{i = 1}^n x(y_i - (mx_i + b)) = -2\sum_{i = 1}^n
 
 
 
-Looking at our top function $\frac{dJ}{dm}$, we see that it equals negative 2, multiplied by the sum of the errors for a provided $m$ and $b$ values relative to our dataset.  And luckily for us, we already have a function called `regression_revenue_error` that returns the error at a given point when provided our $m$ and $b$ values.
+Looking at the function above, $\frac{dJ}{dm}J(m,b)$, we see that it equals negative 2, multiplied by the sum of the errors for a provided $m$ and $b$ values relative to our dataset.  And luckily for us, we already have a function called `regression_revenue_error` that returns the error at a given point when provided our $m$ and $b$ values.
 
 Our task now is two write a function called `b_gradient` that takes in values of $m$, $b$ and our (scaled) movies, and returns the `b` gradient, which is -2 times the sum of the errors for the dataset.
 
